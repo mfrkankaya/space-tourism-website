@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Bellefair, Barlow_Condensed } from 'next/font/google'
 import './globals.css'
 import clsx from 'clsx'
+import AppHeader from '@/components/app-header'
+import { JotaiProvider } from '@/components/jotai-provider'
 
 const bellefair = Bellefair({
   subsets: ['latin-ext'],
@@ -11,7 +13,7 @@ const bellefair = Bellefair({
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ['latin-ext'],
-  weight: ['400'],
+  weight: ['400', '700'],
   variable: '--barlow-condensed'
 })
 
@@ -28,7 +30,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx(bellefair.variable, barlowCondensed.variable)}>
-        {children}
+        <JotaiProvider>
+          <AppHeader />
+          {children}
+        </JotaiProvider>
       </body>
     </html>
   )

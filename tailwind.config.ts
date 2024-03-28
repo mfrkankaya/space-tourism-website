@@ -30,6 +30,12 @@ const config: Config = {
       fontFamily: {
         bellefair: ['var(--bellefair)'],
         'barlow-condensed': ['var(--barlow-condensed)']
+      },
+      opacity: {
+        4: '0.04'
+      },
+      screens: {
+        '2xl': '1440px'
       }
     }
   },
