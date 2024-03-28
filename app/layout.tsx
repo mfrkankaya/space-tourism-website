@@ -1,8 +1,19 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Bellefair, Barlow_Condensed } from 'next/font/google'
 import './globals.css'
+import clsx from 'clsx'
 
-const inter = Inter({ subsets: ['latin'] })
+const bellefair = Bellefair({
+  subsets: ['latin-ext'],
+  weight: ['400'],
+  variable: '--bellefair'
+})
+
+const barlowCondensed = Barlow_Condensed({
+  subsets: ['latin-ext'],
+  weight: ['400'],
+  variable: '--barlow-condensed'
+})
 
 export const metadata: Metadata = {
   title: 'Frontend Mentor | Space tourism website',
@@ -16,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={clsx(bellefair.variable, barlowCondensed.variable)}>
+        {children}
+      </body>
     </html>
   )
 }
