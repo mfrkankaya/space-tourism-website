@@ -114,7 +114,7 @@ export default function AppHeader() {
           alt="logo"
         />
 
-        <nav className="hidden md:flex gap-9 bg-foreground/4 px-12 relative">
+        <nav className="hidden md:flex gap-9 bg-foreground/4 px-12 relative backdrop-blur-3xl 2xl:px-24">
           <div className="hidden 2xl:block absolute top-1/2 -translate-y-1/2 left-0 translate-x-[calc(-100%+20px)] h-px bg-foreground/25 w-[30rem]" />
           <NavLink number="00" title="HOME" href="/" />
           <NavLink number="01" title="DESTINATION" href="/destination" />
